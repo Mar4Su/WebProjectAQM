@@ -5,6 +5,7 @@ async function fetchLiveData(location) {
       seoul: { latitude: 37.5665, longitude: 126.9780 },
       busan: { latitude: 35.1796, longitude: 129.0756 },
       daegu: { latitude: 35.8722, longitude: 128.6014 },
+      ub: { latitude: 47.9221, longitude: 106.9155 },
     };
 
     const cityCoordinates = coordinates[location.toLowerCase()];
@@ -64,9 +65,9 @@ async function updateDashboard(location) {
   document.getElementById("pm10").innerText = `${data.pm10} µg/m³`;
   document.getElementById("no").innerText = `${data.no} µg/m³`;
   document.getElementById("nh3").innerText = `${data.nh3} µg/m³`;
-  document.getElementById("no2").innerText = `${data.no2} µg/m³`; // No CO2 in API; mapped NO2 instead
+  document.getElementById("no2").innerText = `${data.no2} µg/m³`; 
   document.getElementById("so2").innerText = `${data.so2} µg/m³`;
-  document.getElementById("o3").innerText = `${data.o3} µg/m³`; // No VOC in API; mapped Ozone instead
+  document.getElementById("o3").innerText = `${data.o3} µg/m³`; 
   document.getElementById("last-updated").innerText = `${data.updatedAt}`;
 
   console.log(`Live data for ${location}:`, data);
